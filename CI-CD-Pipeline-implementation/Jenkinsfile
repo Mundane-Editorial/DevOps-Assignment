@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    environment {
+        REPO_URL = "https://github.com/Mundane-Editorial/DevOps-Assignment.git"
+        TARGET_DIR = "Cloud-Infrastructure-and-Deployment/node-application"
+        DOCKER_IMAGE = "mundaneeditorial/node-application:lts"
+    }
+
+    stages {
+        stage("Code Clone") {
+            steps {
+                script {
+                    sh '''
+                    rm -rf workspace
+                    git clone --no-checkout $REPO_URL workspace
+                    cd workspace
+                    git sparse-checkout init --cone
+                    git sparse-checkout set $TARGET_DIR
+                    git checkout master
+                    '''
+                    echo "Cloning Completed"
+                }
+            }
+        }
+
+        stage("Building Docker Image") {
+            steps {
+                dir("workspace/$TARGET_DIR") {
+                    sh "docker build -t ${DOCKER_IMAGE} ."
+                }
+                echo "Image built successfully"
+            }
+        }
+
+        stage("Push to Docker Hub") {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'DockerHUB', usernameVariable: 'userName', passwordVariable: 'userPass')]) {
+                    echo "Docker Login"
+                    sh "docker login -u $userName -p $userPass"
+                    echo "Pushing Docker image to Hub"
+                    sh "docker push ${DOCKER_IMAGE}"
+                }
+                echo "successfully pushed to Dockerhub"
+            }
+        }
+
+        stage("Deploy") {
+            steps {
+                sh "docker-compose down && docker-compose up -d"
+                echo "Deployment completed"
+            }
+        }
+    }
+}
