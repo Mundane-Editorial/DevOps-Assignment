@@ -1,14 +1,14 @@
 file structure: 
 
-ASSIGNMENT/
-│── AI-model-deployment-and-ML-OPS/
-│── Automation-Scripting/
-│── CI-CD-Pipeline-implementation/
-│── Cloud-Infrastructure-and-Deployment/
-│── Database-and-storage-optimisation/
-│── Disaster-recovery-and-high-availability/
-│── Monitoring-and-logging/
-│── security-and-compliance/
-│── .gitignore
-│── DevOps Internship Assignment.pdf
-│── README.md
+ASSIGNMENT/  <br>
+│── AI-model-deployment-and-ML-OPS/<br>
+│── Automation-Scripting/<br>
+│── CI-CD-Pipeline-implementation/<br>
+│── Cloud-Infrastructure-and-Deployment/<br>
+│── Database-and-storage-optimisation/<br>
+│── Disaster-recovery-and-high-availability/<br>
+│── Monitoring-and-logging/<br>
+│── security-and-compliance/<br>
+│── .gitignore<br>
+│── DevOps Internship Assignment.pdf<br>
+│── README.md<br>
