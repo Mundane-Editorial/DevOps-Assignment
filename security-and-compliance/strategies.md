@@ -1,0 +1,10 @@
+In today’s fast-moving digital world, DevOps methods have changed how software is created and deployed. although, this change brings new security problems that organizations need to address. 
+<br>
+1. <strong>unsafe handling of sensitive data</strong> 
+During a normal DevOps process, important information like API keys, user passwords, and personal information could be exposed. To lower this risk, companies should use strong encryption and tools for managing secrets like HashiCorp Vault or AWS Secrets Manager. By encrypting sensitive data during transfer and storage, and using strict role-based access controls (RBAC), companies can greatly lower the chance of data breaches. Following GDPR rules, such as changing personal data to pseudonyms, can also improve data safety.
+<br>
+2. <strong>absence of continuous monitoring and vulnerability management</strong> 
+Fast paced development can cause weaknesses in code, configurations, or third-party dependencies to be missed. To tackle this, companies should focus on ongoing monitoring using automated security tools like Snyk or Aqua Security, which can find weaknesses instantly. Creating a strong process for patch management is also important to quickly fix any found issues. This active approach aligns with GDPR laws which stress the need for 'data protection by design and by default,' ensuring security is part of the development process from the beginning.
+<br>
+3. <strong>Unstable infrastructure and cloud resources</strong> 
+It may lead to unauthorized people access sensitive data. Mistakes like open storage buckets or too permissive Identity and Access Management (IAM) roles are common issues in cloud settings. Companies can reduce this risk by using Infrastructure as Code (IaC) methods, with tools like Terraform or AWS CloudFormation, to enforce secure settings. Additionally, using Cloud Security Posture Management (CSPM) tools, such as Prisma Cloud or AWS Config, can help find and fix misconfigurations quickly. It’s also critical to comply with GDPR’s data residency and transfer rules, as this protects personal data and builds trust with customers.
